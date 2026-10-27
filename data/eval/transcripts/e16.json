@@ -1,0 +1,67 @@
+{
+  "id": "e16",
+  "dealId": "d_eval_e16",
+  "title": "PureWater Systems sync",
+  "date": "2026-04-16",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "David O'Connor",
+      "role": "IT Lead",
+      "company": "PureWater Systems",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "Water filtration technicians require SSO login and historical sample imports."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "SAML single sign-on will be live within ten days of contract signing."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "We have two thousand historical lab water quality tests in CSV files."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We can handle the CSV migration within thirty days of contract signature."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Can we automatically generate State EPA compliance certificates?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "In theory we could build custom compliance exports, let me check."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "We will send over our historical test dataset by the end of next week."
+    }
+  ]
+}

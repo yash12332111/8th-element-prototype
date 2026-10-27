@@ -1,0 +1,67 @@
+{
+  "id": "e17",
+  "dealId": "d_eval_e17",
+  "title": "SecureDoor Automation review",
+  "date": "2026-04-17",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Gary Perkins",
+      "role": "VP Installations",
+      "company": "SecureDoor Automation",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We install automatic sliding doors for supermarkets and retail centers."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Our platform offers instant push notifications to dispatchers on iOS and Android."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "What is the timeline to have all four regional centers live on Brightpath?"
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We commit to standard go-live implementation within forty-five days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Can we connect RFID door sensors directly into work order dispatches?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "We could explore radio frequency sensor integrations in an enterprise roadmap review."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Understood. The forty-five day target works well for our schedule."
+    }
+  ]
+}

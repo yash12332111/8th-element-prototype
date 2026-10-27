@@ -1,0 +1,67 @@
+{
+  "id": "e18",
+  "dealId": "d_eval_e18",
+  "title": "PowerGen Generators alignment",
+  "date": "2026-04-18",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Jessica Tan",
+      "role": "Service Operations",
+      "company": "PowerGen Generators",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We service industrial diesel generators and synchronize client records with HubSpot."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We will have the standard CRM sync connector live within twenty-one days."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "Our technicians need training on logging generator fuel pressures."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will provide two admin training sessions completed within seven days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Could the system trigger automatic alerts when generator fuel drops below ten percent?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "I will check if we can add generator fuel level tracking with our telematics team."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "We will provide our generator model catalog and site locations by Thursday."
+    }
+  ]
+}

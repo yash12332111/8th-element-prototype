@@ -1,0 +1,613 @@
+{
+  "e01": {
+    "split": "dev",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "We will have your SAML single sign-on live within two weeks of signature.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 14
+      },
+      {
+        "line_id": "L5",
+        "quote": "We provide two admin training sessions completed within seven days of onboarding.",
+        "type": "training",
+        "catalog_item_id": "trn_admin",
+        "due_days": 7
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L7",
+        "quote": "We could probably look into custom report builders down the road, let me check.",
+        "kind": "discussed"
+      },
+      {
+        "line_id": "L8",
+        "quote": "Our mobile application works seamlessly on both iOS and Android devices.",
+        "kind": "product_description"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L9",
+        "quote": "We will send your team our technician roster by next Tuesday."
+      }
+    ]
+  },
+  "e02": {
+    "split": "dev",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "We can handle the CSV migration within thirty days of contract signature.",
+        "type": "data_migration",
+        "catalog_item_id": "mig_csv",
+        "due_days": 30
+      },
+      {
+        "line_id": "L7",
+        "quote": "We target full go-live within forty-five days of signing the agreement.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L5",
+        "quote": "We could explore automated pager integrations down the road with product.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L8",
+        "quote": "We will provide our equipment inventory file by the fifteenth."
+      }
+    ]
+  },
+  "e03": {
+    "split": "dev",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "We will deliver up to ten workflow configurations within fourteen days.",
+        "type": "configuration",
+        "catalog_item_id": "cfg_workflows",
+        "due_days": 14
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L5",
+        "quote": "Our dispatch engine uses advanced routing algorithms to optimize drive times.",
+        "kind": "product_description"
+      },
+      {
+        "line_id": "L7",
+        "quote": "Let me check with the team about weekend support packages after this call.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e04": {
+    "split": "dev",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "We will have the standard CRM sync connector live within twenty-one days.",
+        "type": "integration",
+        "catalog_item_id": "int_crm_sync",
+        "due_days": 21
+      },
+      {
+        "line_id": "L5",
+        "quote": "We will provide two sessions of admin training in the first week.",
+        "type": "training",
+        "catalog_item_id": "trn_admin",
+        "due_days": 7
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L7",
+        "quote": "In theory we can build custom dashboards, but let me confirm the effort.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L8",
+        "quote": "We will send over our CRM API credentials and test tenant access tomorrow."
+      }
+    ]
+  },
+  "e05": {
+    "split": "dev",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "SAML single sign-on will be delivered within ten days of contract signing.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 10
+      },
+      {
+        "line_id": "L5",
+        "quote": "We commit to standard go-live implementation within forty-five days.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L7",
+        "quote": "I will ask engineering if we can support drone telemetry later this year.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e06": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We can handle the CSV migration within thirty days of contract signature.",
+        "type": "data_migration",
+        "catalog_item_id": "mig_csv",
+        "due_days": 30
+      },
+      {
+        "line_id": "L6",
+        "quote": "SAML single sign-on will be live within fourteen days of signing.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 14
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L4",
+        "quote": "We could probably look at custom reports, let me check with engineering.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L7",
+        "quote": "We will send the legacy export file by next Monday."
+      }
+    ]
+  },
+  "e07": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We will configure up to ten custom workflows within fourteen days.",
+        "type": "configuration",
+        "catalog_item_id": "cfg_workflows",
+        "due_days": 14
+      },
+      {
+        "line_id": "L4",
+        "quote": "We will deliver two admin training sessions completed within seven days.",
+        "type": "training",
+        "catalog_item_id": "trn_admin",
+        "due_days": 7
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "Our cloud platform maintains ninety-nine point nine percent uptime across all regions.",
+        "kind": "product_description"
+      },
+      {
+        "line_id": "L8",
+        "quote": "We could see if custom calibration reports are doable in a future sprint.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e08": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "We will have the standard CRM sync connector live within twenty-one days.",
+        "type": "integration",
+        "catalog_item_id": "int_crm_sync",
+        "due_days": 21
+      },
+      {
+        "line_id": "L5",
+        "quote": "We commit to full go-live implementation within forty-five days of signing.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L7",
+        "quote": "Maybe we could do customized weather alerts later, I will inquire.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L8",
+        "quote": "We will assign our lead dispatcher to coordinate the schedule tomorrow."
+      }
+    ]
+  },
+  "e09": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We will have the accounting sync standard connector live within fourteen days.",
+        "type": "integration",
+        "catalog_item_id": "int_accounting",
+        "due_days": 14
+      },
+      {
+        "line_id": "L4",
+        "quote": "SAML single sign-on will be live within ten days of contract execution.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 10
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "Let me consult the product team about GPS sensor webhooks for crane telemetry.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e10": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We can handle the CSV migration within thirty days of contract signature.",
+        "type": "data_migration",
+        "catalog_item_id": "mig_csv",
+        "due_days": 30
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L4",
+        "quote": "Our tablet app supports barcode scanning out of the box on iOS.",
+        "kind": "product_description"
+      },
+      {
+        "line_id": "L6",
+        "quote": "We could probably support batch PDF invoices, let me follow up with engineering.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L7",
+        "quote": "We will provide our route fiber maps by Friday afternoon."
+      }
+    ]
+  },
+  "e11": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We will configure up to ten custom workflows within fourteen days.",
+        "type": "configuration",
+        "catalog_item_id": "cfg_workflows",
+        "due_days": 14
+      },
+      {
+        "line_id": "L4",
+        "quote": "We will provide two admin training sessions completed within seven days.",
+        "type": "training",
+        "catalog_item_id": "trn_admin",
+        "due_days": 7
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "I will check if we can adjust the mobile shift views in an upcoming patch.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e12": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L3",
+        "quote": "We commit to standard go-live implementation within forty-five days.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      },
+      {
+        "line_id": "L7",
+        "quote": "SAML single sign-on will be live within fourteen days of signing.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 14
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L5",
+        "quote": "We could look at chemical inventory tracking next quarter with product.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L8",
+        "quote": "We will send over our complete branch and technician directory by Wednesday."
+      }
+    ]
+  },
+  "e13": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L4",
+        "quote": "We will have the standard CRM sync connector live within twenty-one days.",
+        "type": "integration",
+        "catalog_item_id": "int_crm_sync",
+        "due_days": 21
+      },
+      {
+        "line_id": "L6",
+        "quote": "We can handle the CSV migration within thirty days of contract signature.",
+        "type": "data_migration",
+        "catalog_item_id": "mig_csv",
+        "due_days": 30
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L2",
+        "quote": "Our platform architecture handles offline queuing seamlessly on all mobile apps.",
+        "kind": "product_description"
+      },
+      {
+        "line_id": "L8",
+        "quote": "Perhaps we can evaluate SCADA integration later, but it is not in current scope.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e14": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We will provide two admin training sessions completed within seven days.",
+        "type": "training",
+        "catalog_item_id": "trn_admin",
+        "due_days": 7
+      },
+      {
+        "line_id": "L4",
+        "quote": "We commit to standard go-live implementation within forty-five days.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "We might be able to add equipment warranty lookups in a later release.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L7",
+        "quote": "We will compile and send over our technician contact roster by tomorrow."
+      }
+    ]
+  },
+  "e15": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We will have the accounting sync standard connector live within fourteen days.",
+        "type": "integration",
+        "catalog_item_id": "int_accounting",
+        "due_days": 14
+      },
+      {
+        "line_id": "L4",
+        "quote": "We will configure up to ten custom workflows within fourteen days.",
+        "type": "configuration",
+        "catalog_item_id": "cfg_workflows",
+        "due_days": 14
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "Let me verify with our team about drone aerial photo storage limits.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e16": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "SAML single sign-on will be live within ten days of contract signing.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 10
+      },
+      {
+        "line_id": "L4",
+        "quote": "We can handle the CSV migration within thirty days of contract signature.",
+        "type": "data_migration",
+        "catalog_item_id": "mig_csv",
+        "due_days": 30
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "In theory we could build custom compliance exports, let me check.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L7",
+        "quote": "We will send over our historical test dataset by the end of next week."
+      }
+    ]
+  },
+  "e17": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L4",
+        "quote": "We commit to standard go-live implementation within forty-five days.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L2",
+        "quote": "Our platform offers instant push notifications to dispatchers on iOS and Android.",
+        "kind": "product_description"
+      },
+      {
+        "line_id": "L6",
+        "quote": "We could explore radio frequency sensor integrations in an enterprise roadmap review.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e18": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We will have the standard CRM sync connector live within twenty-one days.",
+        "type": "integration",
+        "catalog_item_id": "int_crm_sync",
+        "due_days": 21
+      },
+      {
+        "line_id": "L4",
+        "quote": "We will provide two admin training sessions completed within seven days.",
+        "type": "training",
+        "catalog_item_id": "trn_admin",
+        "due_days": 7
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "I will check if we can add generator fuel level tracking with our telematics team.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L7",
+        "quote": "We will provide our generator model catalog and site locations by Thursday."
+      }
+    ]
+  },
+  "e19": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "SAML single sign-on will be live within fourteen days of contract signing.",
+        "type": "integration",
+        "catalog_item_id": "int_sso",
+        "due_days": 14
+      },
+      {
+        "line_id": "L4",
+        "quote": "We will configure up to ten custom workflows within fourteen days.",
+        "type": "configuration",
+        "catalog_item_id": "cfg_workflows",
+        "due_days": 14
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L6",
+        "quote": "We could look into integrating with legacy magnetic badges, but that is speculative.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": []
+  },
+  "e20": {
+    "split": "test",
+    "commitments": [
+      {
+        "line_id": "L2",
+        "quote": "We can handle the CSV migration within thirty days of contract signature.",
+        "type": "data_migration",
+        "catalog_item_id": "mig_csv",
+        "due_days": 30
+      },
+      {
+        "line_id": "L4",
+        "quote": "We will have the accounting sync standard connector live within fourteen days.",
+        "type": "integration",
+        "catalog_item_id": "int_accounting",
+        "due_days": 14
+      },
+      {
+        "line_id": "L6",
+        "quote": "We commit to standard go-live implementation within forty-five days.",
+        "type": "timeline",
+        "catalog_item_id": "tl_golive_standard",
+        "due_days": 45
+      }
+    ],
+    "decoys": [
+      {
+        "line_id": "L8",
+        "quote": "Let me check if route heatmaps could be added in our upcoming Q3 roadmap.",
+        "kind": "discussed"
+      }
+    ],
+    "dependencies": [
+      {
+        "line_id": "L9",
+        "quote": "We will export our driver license and vehicle registry by this Friday."
+      }
+    ]
+  }
+}

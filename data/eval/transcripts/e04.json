@@ -1,0 +1,73 @@
+{
+  "id": "e04",
+  "dealId": "d_eval_e04",
+  "title": "Beacon Fire & Security requirements",
+  "date": "2026-04-04",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Chloe Nguyen",
+      "role": "Compliance Manager",
+      "company": "Beacon Fire & Security",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "All inspection records must sync directly into our CRM accounts."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Our standard CRM connector synchronizes accounts, contacts, and work orders."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s1",
+      "text": "We will have the standard CRM sync connector live within twenty-one days."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s2",
+      "text": "We also need our lead technicians trained on compliance logging."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s1",
+      "text": "We will provide two sessions of admin training in the first week."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s2",
+      "text": "Can we have custom inspection certificates rendered automatically?"
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s1",
+      "text": "In theory we can build custom dashboards, but let me confirm the effort."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s2",
+      "text": "We will send over our CRM API credentials and test tenant access tomorrow."
+    }
+  ]
+}

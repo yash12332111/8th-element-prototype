@@ -1,0 +1,67 @@
+{
+  "id": "e19",
+  "dealId": "d_eval_e19",
+  "title": "SafeGuard Security Systems kickoff",
+  "date": "2026-04-19",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Brian Kelly",
+      "role": "Security Director",
+      "company": "SafeGuard Security Systems",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "Access control keycard installations require single sign-on authentication."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "SAML single sign-on will be live within fourteen days of contract signing."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "We have five distinct escalation workflows for security clearance audits."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will configure up to ten custom workflows within fourteen days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Can the field app scan legacy magnetic swipe badges directly?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "We could look into integrating with legacy magnetic badges, but that is speculative."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "That is fine, the mobile barcodes and SSO meet our standard."
+    }
+  ]
+}

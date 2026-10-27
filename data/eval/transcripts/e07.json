@@ -1,0 +1,73 @@
+{
+  "id": "e07",
+  "dealId": "d_eval_e07",
+  "title": "Vanguard Medical calibration review",
+  "date": "2026-04-07",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Dr. Andrea Morris",
+      "role": "Quality Director",
+      "company": "Vanguard Medical Tech",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "Hospital biomedical equipment requires strict calibration protocol tracking."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We will configure up to ten custom workflows within fourteen days."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "Our staff requires dedicated admin instruction on compliance audits."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will deliver two admin training sessions completed within seven days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Is the cloud platform certified for ninety-nine point nine uptime?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "Our cloud platform maintains ninety-nine point nine percent uptime across all regions."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Could we also automate hospital biomedical compliance PDF sign-offs?"
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s1",
+      "text": "We could see if custom calibration reports are doable in a future sprint."
+    }
+  ]
+}

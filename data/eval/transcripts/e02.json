@@ -1,0 +1,73 @@
+{
+  "id": "e02",
+  "dealId": "d_eval_e02",
+  "title": "Pinnacle Elevators scope alignment",
+  "date": "2026-04-02",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Rachel Scott",
+      "role": "Service VP",
+      "company": "Pinnacle Elevators",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We have historical maintenance records for three hundred commercial elevators."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Our data team regularly handles elevator service log migrations."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s1",
+      "text": "We can handle the CSV migration within thirty days of contract signature."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s2",
+      "text": "Do you have emergency pager integrations for trapped passengers?"
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s1",
+      "text": "We could explore automated pager integrations down the road with product."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s2",
+      "text": "What is the overall target date for the initial rollout?"
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s1",
+      "text": "We target full go-live within forty-five days of signing the agreement."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s2",
+      "text": "Understood. We will provide our equipment inventory file by the fifteenth."
+    }
+  ]
+}

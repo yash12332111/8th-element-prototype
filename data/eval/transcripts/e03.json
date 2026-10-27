@@ -1,0 +1,73 @@
+{
+  "id": "e03",
+  "dealId": "d_eval_e03",
+  "title": "AquaFlow Plumbing commercial kickoff",
+  "date": "2026-04-03",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Mark Hernandez",
+      "role": "Chief Estimator",
+      "company": "AquaFlow Plumbing",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "Our technicians handle commercial backflow testing and residential repairs."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Our workflow engine easily supports multi-tier job categorization."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s1",
+      "text": "We will deliver up to ten workflow configurations within fourteen days."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s2",
+      "text": "How does the dispatch schedule handle priority emergency leaks?"
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s1",
+      "text": "Our dispatch engine uses advanced routing algorithms to optimize drive times."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s2",
+      "text": "Is twenty-four seven weekend support included in our standard tier?"
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s1",
+      "text": "Let me check with the team about weekend support packages after this call."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s2",
+      "text": "Sounds fair. We look forward to seeing the draft agreement."
+    }
+  ]
+}

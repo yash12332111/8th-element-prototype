@@ -1,0 +1,79 @@
+{
+  "id": "e01",
+  "dealId": "d_eval_e01",
+  "title": "Apex Climate Care discovery call",
+  "date": "2026-04-01",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Derek Miller",
+      "role": "Operations Director",
+      "company": "Apex Climate Care",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We need automated dispatching for twenty field vans across the state."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Brightpath handles fleet routing easily, and we can configure your accounts."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s1",
+      "text": "We will have your SAML single sign-on live within two weeks of signature."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s2",
+      "text": "That fits our IT requirement. How quickly can you train our dispatchers?"
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s1",
+      "text": "We provide two admin training sessions completed within seven days of onboarding."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s2",
+      "text": "Can we also get custom analytics reports for van fuel usage?"
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s1",
+      "text": "We could probably look into custom report builders down the road, let me check."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s1",
+      "text": "Our mobile application works seamlessly on both iOS and Android devices."
+    },
+    {
+      "id": "L9",
+      "ts": "00:04:40",
+      "speakerId": "s2",
+      "text": "Great. We will send your team our technician roster by next Tuesday."
+    }
+  ]
+}

@@ -1,0 +1,1144 @@
+[
+  {
+    "runId": "2026-10-27T08:52:08.233Z",
+    "split": "dev",
+    "model": "openai/gpt-oss-120b",
+    "strict": true,
+    "promptVersion": "v1.0",
+    "nTranscripts": 5,
+    "nGold": 9,
+    "nDecoys": 7,
+    "precision": {
+      "value": 1,
+      "num": 9,
+      "den": 9
+    },
+    "recall": {
+      "value": 1,
+      "num": 9,
+      "den": 9
+    },
+    "ungroundedRate": {
+      "value": 0,
+      "num": 0,
+      "den": 11
+    },
+    "typeAccuracy": {
+      "value": 0.6667,
+      "num": 6,
+      "den": 9
+    },
+    "decoyFalsePositiveRate": {
+      "value": 0,
+      "num": 0,
+      "den": 7
+    },
+    "perTranscript": [
+      {
+        "transcriptId": "e01",
+        "split": "dev",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 2,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0.5,
+          "num": 1,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "We will have your SAML single sign-on live within two weeks of signature.",
+            "goldQuote": "We will have your SAML single sign-on live within two weeks of signature.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L5",
+            "goldLineId": "L5",
+            "predQuote": "We provide two admin training sessions completed within seven days of onboarding.",
+            "goldQuote": "We provide two admin training sessions completed within seven days of onboarding.",
+            "predType": "training",
+            "goldType": "training",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e02",
+        "split": "dev",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "goldQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "predType": "data_migration",
+            "goldType": "data_migration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L7",
+            "goldLineId": "L7",
+            "predQuote": "We target full go-live within forty-five days of signing the agreement.",
+            "goldQuote": "We target full go-live within forty-five days of signing the agreement.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e03",
+        "split": "dev",
+        "nGold": 1,
+        "nPred": 1,
+        "nMatched": 1,
+        "nDecoys": 2,
+        "nDecoysTriggered": 0,
+        "grounded": 1,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "recall": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "We will deliver up to ten workflow configurations within fourteen days.",
+            "goldQuote": "We will deliver up to ten workflow configurations within fourteen days.",
+            "predType": "configuration",
+            "goldType": "configuration",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e04",
+        "split": "dev",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0.5,
+          "num": 1,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "goldQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L5",
+            "goldLineId": "L5",
+            "predQuote": "We will provide two sessions of admin training in the first week.",
+            "goldQuote": "We will provide two sessions of admin training in the first week.",
+            "predType": "training",
+            "goldType": "training",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e05",
+        "split": "dev",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0.5,
+          "num": 1,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "SAML single sign-on will be delivered within ten days of contract signing.",
+            "goldQuote": "SAML single sign-on will be delivered within ten days of contract signing.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L5",
+            "goldLineId": "L5",
+            "predQuote": "We commit to standard go-live implementation within forty-five days.",
+            "goldQuote": "We commit to standard go-live implementation within forty-five days.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      }
+    ]
+  },
+  {
+    "runId": "2026-10-27T08:55:24.739Z",
+    "split": "test",
+    "model": "openai/gpt-oss-120b",
+    "strict": true,
+    "promptVersion": "v1.0",
+    "nTranscripts": 15,
+    "nGold": 29,
+    "nDecoys": 19,
+    "precision": {
+      "value": 0.9355,
+      "num": 29,
+      "den": 31
+    },
+    "recall": {
+      "value": 1,
+      "num": 29,
+      "den": 29
+    },
+    "ungroundedRate": {
+      "value": 0,
+      "num": 0,
+      "den": 41
+    },
+    "typeAccuracy": {
+      "value": 0.7931,
+      "num": 23,
+      "den": 29
+    },
+    "decoyFalsePositiveRate": {
+      "value": 0,
+      "num": 0,
+      "den": 19
+    },
+    "perTranscript": [
+      {
+        "transcriptId": "e06",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 3,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 3,
+        "dropped": 0,
+        "precision": {
+          "value": 0.6667,
+          "num": 2,
+          "den": 3
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0.5,
+          "num": 1,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "goldQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "predType": "data_migration",
+            "goldType": "data_migration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L6",
+            "goldLineId": "L6",
+            "predQuote": "SAML single sign-on will be live within fourteen days of signing.",
+            "goldQuote": "SAML single sign-on will be live within fourteen days of signing.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          }
+        ],
+        "unmatchedPreds": [
+          {
+            "lineId": "L8",
+            "quote": "our implementation team will ingest it as soon as received.",
+            "type": "other"
+          }
+        ],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e07",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 2,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "goldQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "predType": "configuration",
+            "goldType": "configuration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will deliver two admin training sessions completed within seven days.",
+            "goldQuote": "We will deliver two admin training sessions completed within seven days.",
+            "predType": "training",
+            "goldType": "training",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e08",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "goldQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "predType": "integration",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L5",
+            "goldLineId": "L5",
+            "predQuote": "We commit to full go-live implementation within forty-five days of signing.",
+            "goldQuote": "We commit to full go-live implementation within forty-five days of signing.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e09",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0,
+          "num": 0,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We will have the accounting sync standard connector live within fourteen days.",
+            "goldQuote": "We will have the accounting sync standard connector live within fourteen days.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "SAML single sign-on will be live within ten days of contract execution.",
+            "goldQuote": "SAML single sign-on will be live within ten days of contract execution.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e10",
+        "split": "test",
+        "nGold": 1,
+        "nPred": 1,
+        "nMatched": 1,
+        "nDecoys": 2,
+        "nDecoysTriggered": 0,
+        "grounded": 1,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "recall": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "goldQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "predType": "data_migration",
+            "goldType": "data_migration",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e11",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "goldQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "predType": "configuration",
+            "goldType": "configuration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will provide two admin training sessions completed within seven days.",
+            "goldQuote": "We will provide two admin training sessions completed within seven days.",
+            "predType": "training",
+            "goldType": "training",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e12",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L3",
+            "goldLineId": "L3",
+            "predQuote": "We commit to standard go-live implementation within forty-five days.",
+            "goldQuote": "We commit to standard go-live implementation within forty-five days.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L7",
+            "goldLineId": "L7",
+            "predQuote": "SAML single sign-on will be live within fourteen days of signing.",
+            "goldQuote": "SAML single sign-on will be live within fourteen days of signing.",
+            "predType": "integration",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e13",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 2,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0,
+          "num": 0,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "goldQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L6",
+            "goldLineId": "L6",
+            "predQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "goldQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "predType": "timeline",
+            "goldType": "data_migration",
+            "jaccard": 1,
+            "typeMatch": false
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e14",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 3,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 3,
+        "dropped": 0,
+        "precision": {
+          "value": 0.6667,
+          "num": 2,
+          "den": 3
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We will provide two admin training sessions completed within seven days.",
+            "goldQuote": "We will provide two admin training sessions completed within seven days.",
+            "predType": "training",
+            "goldType": "training",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We commit to standard go-live implementation within forty-five days.",
+            "goldQuote": "We commit to standard go-live implementation within forty-five days.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [
+          {
+            "lineId": "L8",
+            "quote": "Great, we will use that to configure the technician dispatch accounts.",
+            "type": "configuration"
+          }
+        ],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e15",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 0.5,
+          "num": 1,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We will have the accounting sync standard connector live within fourteen days.",
+            "goldQuote": "We will have the accounting sync standard connector live within fourteen days.",
+            "predType": "timeline",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": false
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "goldQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "predType": "configuration",
+            "goldType": "configuration",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e16",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "SAML single sign-on will be live within ten days of contract signing.",
+            "goldQuote": "SAML single sign-on will be live within ten days of contract signing.",
+            "predType": "integration",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "goldQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "predType": "data_migration",
+            "goldType": "data_migration",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e17",
+        "split": "test",
+        "nGold": 1,
+        "nPred": 1,
+        "nMatched": 1,
+        "nDecoys": 2,
+        "nDecoysTriggered": 0,
+        "grounded": 1,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "recall": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 1,
+          "den": 1
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We commit to standard go-live implementation within forty-five days.",
+            "goldQuote": "We commit to standard go-live implementation within forty-five days.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e18",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "goldQuote": "We will have the standard CRM sync connector live within twenty-one days.",
+            "predType": "integration",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will provide two admin training sessions completed within seven days.",
+            "goldQuote": "We will provide two admin training sessions completed within seven days.",
+            "predType": "training",
+            "goldType": "training",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e19",
+        "split": "test",
+        "nGold": 2,
+        "nPred": 2,
+        "nMatched": 2,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 2,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "recall": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 2,
+          "den": 2
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "SAML single sign-on will be live within fourteen days of contract signing.",
+            "goldQuote": "SAML single sign-on will be live within fourteen days of contract signing.",
+            "predType": "integration",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "goldQuote": "We will configure up to ten custom workflows within fourteen days.",
+            "predType": "configuration",
+            "goldType": "configuration",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      },
+      {
+        "transcriptId": "e20",
+        "split": "test",
+        "nGold": 3,
+        "nPred": 3,
+        "nMatched": 3,
+        "nDecoys": 1,
+        "nDecoysTriggered": 0,
+        "grounded": 3,
+        "dropped": 0,
+        "precision": {
+          "value": 1,
+          "num": 3,
+          "den": 3
+        },
+        "recall": {
+          "value": 1,
+          "num": 3,
+          "den": 3
+        },
+        "typeAccuracy": {
+          "value": 1,
+          "num": 3,
+          "den": 3
+        },
+        "matches": [
+          {
+            "predIndex": 0,
+            "goldIndex": 0,
+            "predLineId": "L2",
+            "goldLineId": "L2",
+            "predQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "goldQuote": "We can handle the CSV migration within thirty days of contract signature.",
+            "predType": "data_migration",
+            "goldType": "data_migration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 1,
+            "goldIndex": 1,
+            "predLineId": "L4",
+            "goldLineId": "L4",
+            "predQuote": "We will have the accounting sync standard connector live within fourteen days.",
+            "goldQuote": "We will have the accounting sync standard connector live within fourteen days.",
+            "predType": "integration",
+            "goldType": "integration",
+            "jaccard": 1,
+            "typeMatch": true
+          },
+          {
+            "predIndex": 2,
+            "goldIndex": 2,
+            "predLineId": "L6",
+            "goldLineId": "L6",
+            "predQuote": "We commit to standard go-live implementation within forty-five days.",
+            "goldQuote": "We commit to standard go-live implementation within forty-five days.",
+            "predType": "timeline",
+            "goldType": "timeline",
+            "jaccard": 1,
+            "typeMatch": true
+          }
+        ],
+        "unmatchedPreds": [],
+        "unmatchedGolds": []
+      }
+    ]
+  }
+]

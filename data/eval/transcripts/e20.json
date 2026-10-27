@@ -1,0 +1,79 @@
+{
+  "id": "e20",
+  "dealId": "d_eval_e20",
+  "title": "Express Fleet Logistics scoping",
+  "date": "2026-04-20",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Monica Ramos",
+      "role": "Fleet COO",
+      "company": "Express Fleet Logistics",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We dispatch sixty couriers and have five years of billing records in CSVs."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We can handle the CSV migration within thirty days of contract signature."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "We need our dispatch fees synced directly to our QuickBooks account."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will have the accounting sync standard connector live within fourteen days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "What is the expected timeline for full cutover to Brightpath?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "We commit to standard go-live implementation within forty-five days."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Can we view live delivery heatmaps across metropolitan corridors?"
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s1",
+      "text": "Let me check if route heatmaps could be added in our upcoming Q3 roadmap."
+    },
+    {
+      "id": "L9",
+      "ts": "00:04:40",
+      "speakerId": "s2",
+      "text": "We will export our driver license and vehicle registry by this Friday."
+    }
+  ]
+}

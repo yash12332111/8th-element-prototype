@@ -1,0 +1,73 @@
+{
+  "id": "e14",
+  "dealId": "d_eval_e14",
+  "title": "Prime Catering Repair session",
+  "date": "2026-04-14",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Anthony Russo",
+      "role": "Service Manager",
+      "company": "Prime Catering Repair",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We repair commercial convection ovens, fryers, and dishwashers for hotels."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We will provide two admin training sessions completed within seven days."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "What is the timeline for rolling this out to our service fleet?"
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We commit to standard go-live implementation within forty-five days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Can the system look up manufacturer oven warranties automatically?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "We might be able to add equipment warranty lookups in a later release."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "We will compile and send over our technician contact roster by tomorrow."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s1",
+      "text": "Great, we will use that to configure the technician dispatch accounts."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "e10",
+  "dealId": "d_eval_e10",
+  "title": "ClearPath Telecom scoping",
+  "date": "2026-04-10",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Valerie Cole",
+      "role": "Network Ops VP",
+      "company": "ClearPath Telecom",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We have fiber splice histories and cable run data in CSV spreadsheets."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We can handle the CSV migration within thirty days of contract signature."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "Can field crews scan optical fiber equipment barcodes with their cameras?"
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "Our tablet app supports barcode scanning out of the box on iOS."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Can we generate batch PDF export invoices for municipal clients?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "We could probably support batch PDF invoices, let me follow up with engineering."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "We will provide our route fiber maps by Friday afternoon."
+    }
+  ]
+}

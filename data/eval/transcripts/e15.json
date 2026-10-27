@@ -1,0 +1,67 @@
+{
+  "id": "e15",
+  "dealId": "d_eval_e15",
+  "title": "StormShield Roofing call",
+  "date": "2026-04-15",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Cynthia Alvarez",
+      "role": "CFO",
+      "company": "StormShield Roofing",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "Invoicing and payment milestone tracking must integrate into QuickBooks."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We will have the accounting sync standard connector live within fourteen days."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "We also need inspection report workflows tailored for insurance claims."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will configure up to ten custom workflows within fourteen days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Can we store high-resolution aerial drone roof damage photography?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "Let me verify with our team about drone aerial photo storage limits."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Okay, let us know what the cloud photo storage policy is."
+    }
+  ]
+}

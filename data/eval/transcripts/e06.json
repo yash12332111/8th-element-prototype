@@ -1,0 +1,73 @@
+{
+  "id": "e06",
+  "dealId": "d_eval_e06",
+  "title": "BlueSky Refrigeration proposal",
+  "date": "2026-04-06",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Julian Vance",
+      "role": "Technical Director",
+      "company": "BlueSky Refrigeration",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We have five years of cold-storage equipment histories stored in CSV files."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We can handle the CSV migration within thirty days of contract signature."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "Can we get custom refrigeration failure trend reports?"
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We could probably look at custom reports, let me check with engineering."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Security compliance requires SAML SSO integration before technicians log in."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "SAML single sign-on will be live within fourteen days of signing."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Excellent. We will send the legacy export file by next Monday."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s1",
+      "text": "Perfect, our implementation team will ingest it as soon as received."
+    }
+  ]
+}

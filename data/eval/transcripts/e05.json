@@ -1,0 +1,73 @@
+{
+  "id": "e05",
+  "dealId": "d_eval_e05",
+  "title": "SunPeak Solar review",
+  "date": "2026-04-05",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Lucas Wright",
+      "role": "Field Ops Lead",
+      "company": "SunPeak Solar Installations",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We require SAML single sign-on for our eighty field crew members."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We support Okta and Azure AD through standard SAML two-point-zero."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s1",
+      "text": "SAML single sign-on will be delivered within ten days of contract signing."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s2",
+      "text": "What is our overall target go-live date for the field teams?"
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s1",
+      "text": "We commit to standard go-live implementation within forty-five days."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s2",
+      "text": "Can the system ingest aerial drone roof measurements?"
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s1",
+      "text": "I will ask engineering if we can support drone telemetry later this year."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s2",
+      "text": "Understood, that sounds like a good plan for phase one."
+    }
+  ]
+}

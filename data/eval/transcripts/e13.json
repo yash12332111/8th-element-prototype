@@ -1,0 +1,73 @@
+{
+  "id": "e13",
+  "dealId": "d_eval_e13",
+  "title": "Zenith Wind Services discussion",
+  "date": "2026-04-13",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Lars Lindstrom",
+      "role": "Operations VP",
+      "company": "Zenith Wind Services",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "Our wind turbine techs work in remote mountain areas without cellular reception."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Our platform architecture handles offline queuing seamlessly on all mobile apps."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "We need our maintenance logs synced into Salesforce CRM."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will have the standard CRM sync connector live within twenty-one days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "We also have turbine inspection spreadsheets that need importing."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "We can handle the CSV migration within thirty days of contract signature."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Can we pull real-time turbine vibration alerts via SCADA integration?"
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s1",
+      "text": "Perhaps we can evaluate SCADA integration later, but it is not in current scope."
+    }
+  ]
+}

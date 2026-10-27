@@ -1,0 +1,67 @@
+{
+  "id": "e11",
+  "dealId": "d_eval_e11",
+  "title": "Metro Clean Industrial call",
+  "date": "2026-04-11",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Trevor Stone",
+      "role": "Operations Lead",
+      "company": "Metro Clean Industrial",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We clean food processing plants and need customized sanitization checklist templates."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "We will configure up to ten custom workflows within fourteen days."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s2",
+      "text": "Our shift supervisors need dedicated admin walkthrough sessions."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s1",
+      "text": "We will provide two admin training sessions completed within seven days."
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s2",
+      "text": "Could shift supervisors customize their tablet roster view on the fly?"
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s1",
+      "text": "I will check if we can adjust the mobile shift views in an upcoming patch."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s2",
+      "text": "Fair enough. That covers our primary requirements."
+    }
+  ]
+}

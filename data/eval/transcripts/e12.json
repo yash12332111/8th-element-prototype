@@ -1,0 +1,73 @@
+{
+  "id": "e12",
+  "dealId": "d_eval_e12",
+  "title": "Shield Pest Control kickoff",
+  "date": "2026-04-12",
+  "source": "call",
+  "speakers": [
+    {
+      "id": "s1",
+      "name": "Priya Raman",
+      "role": "Account Executive",
+      "company": "Brightpath",
+      "side": "vendor"
+    },
+    {
+      "id": "s2",
+      "name": "Fiona Martinez",
+      "role": "Branch Manager",
+      "company": "Shield Pest Control",
+      "side": "customer"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L1",
+      "ts": "00:00:00",
+      "speakerId": "s2",
+      "text": "We service four hundred commercial accounts across three regional branches."
+    },
+    {
+      "id": "L2",
+      "ts": "00:00:35",
+      "speakerId": "s1",
+      "text": "Our multi-branch dispatching coordinates regional technician routes effectively."
+    },
+    {
+      "id": "L3",
+      "ts": "00:01:10",
+      "speakerId": "s1",
+      "text": "We commit to standard go-live implementation within forty-five days."
+    },
+    {
+      "id": "L4",
+      "ts": "00:01:45",
+      "speakerId": "s2",
+      "text": "Can we track chemical pesticide batch numbers on work orders?"
+    },
+    {
+      "id": "L5",
+      "ts": "00:02:20",
+      "speakerId": "s1",
+      "text": "We could look at chemical inventory tracking next quarter with product."
+    },
+    {
+      "id": "L6",
+      "ts": "00:02:55",
+      "speakerId": "s2",
+      "text": "We will need single sign-on configured for all office dispatchers."
+    },
+    {
+      "id": "L7",
+      "ts": "00:03:30",
+      "speakerId": "s1",
+      "text": "SAML single sign-on will be live within fourteen days of signing."
+    },
+    {
+      "id": "L8",
+      "ts": "00:04:05",
+      "speakerId": "s2",
+      "text": "We will send over our complete branch and technician directory by Wednesday."
+    }
+  ]
+}
