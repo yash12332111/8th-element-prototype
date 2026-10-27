@@ -391,3 +391,113 @@ a:hover { text-decoration: underline; }
 .chip { display: inline-flex; align-items: center; padding: 1px 6px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; }
 .chip-vendor { background: var(--accent-dim); color: var(--accent); }
 .chip-customer { background: var(--amber-bg); color: var(--amber); }
+
+/* ── Phase 3: Capture & Commitments layout ─────────────────────── */
+.capture-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .capture-layout { grid-template-columns: 1fr; }
+}
+
+.transcript-scroll {
+  max-height: 720px;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 16px;
+}
+
+.candidate-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.candidate-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+}
+.candidate-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.quote-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-left: 3px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.quote-box.active {
+  border-left-color: var(--accent);
+  color: var(--text);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.modal-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow-md);
+}
+
+.input-field {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  margin-top: 6px;
+  outline: none;
+}
+.input-field:focus {
+  border-color: var(--accent);
+}
+
+.history-item {
+  border-left: 2px solid var(--border);
+  padding-left: 12px;
+  margin-left: 6px;
+  margin-top: 8px;
+  position: relative;
+}
+.history-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-subtle);
+}
+

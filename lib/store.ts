@@ -10,22 +10,8 @@ import type {
   Approval, CatalogItem,
 } from "./types";
 
-// ------------------------------------------------------------------
-// Extraction result shape (referenced by the store; defined here
-// so it can be imported from a single place in Phase 2).
-// ------------------------------------------------------------------
-export interface ExtractionResult {
-  promptVersion: string;
-  model: string;
-  strict: boolean;
-  latencyMs: number;
-  source: "precomputed" | "live";
-  candidates: unknown[];
-  discussed: unknown[];
-  dependencies: unknown[];
-  dropped: { quote: string; reason: string }[];
-  rawCount: number;
-}
+import type { ExtractionResult } from "./llm/extract";
+export type { ExtractionResult };
 
 // ------------------------------------------------------------------
 // State shape (section 6)
@@ -48,7 +34,7 @@ export interface AppState {
   edit(id: string, patch: { text?: string; quote?: string; type?: CommitmentType; dueDays?: number | null }): void;
   markNotCommitment(id: string, reason: string): void;
 
-  setApproval(id: string, approval: Approval, note?: string): void;
+  setApproval(id: string, approval: Approval, note?: string, patch?: { text?: string; dueDays?: number | null }): void;
   recordWalkBack(id: string, note: string): void;
 
   moveStage(dealId: string, to: Stage): void;
@@ -256,19 +242,47 @@ export const useStore = create<AppState>()(
         },
 
         // ── Approval (implementation only) ───────────────────────
-        setApproval(id, approval, note) {
+        setApproval(id, approval, note, patch) {
           const { role } = get();
           if (!canImpl(role)) return;
           const c = get().commitments.find((x) => x.id === id);
           if (!c) return;
-          // Red approve requires a note
+          // Red approve requires an exception note
           if (approval === "approved" && c.flag === "red" && (!note || note.trim().length === 0)) return;
+          // Decline requires a note explaining why
+          if (approval === "declined" && (!note || note.trim().length === 0)) return;
+
+          let updated = { ...c, approval, approvalNote: note ?? c.approvalNote };
+
+          if (patch) {
+            const updatedText = patch.text ?? c.text;
+            const updatedDueDays = patch.dueDays !== undefined ? patch.dueDays : c.dueDays;
+            const { flag, reason } = checkCommitment(
+              { type: c.type, catalogItemId: c.catalogItemId, dueDays: updatedDueDays },
+              catalogData as CatalogItem[]
+            );
+            const newVersion = {
+              text: updatedText,
+              quote: c.quote,
+              type: c.type,
+              dueDays: updatedDueDays,
+              editedBy: "implementation" as const,
+              at: now(),
+            };
+            updated = {
+              ...updated,
+              text: updatedText,
+              dueDays: updatedDueDays,
+              flag,
+              flagReason: reason,
+              versions: [...c.versions, newVersion],
+            };
+          }
+
           set((s) => ({
-            commitments: s.commitments.map((x) =>
-              x.id === id ? { ...x, approval, approvalNote: note ?? x.approvalNote } : x
-            ),
+            commitments: s.commitments.map((x) => (x.id === id ? updated : x)),
           }));
-          emit({ role, dealId: c.dealId, commitmentId: id, type: "approval_set", payload: { approval, note } });
+          emit({ role, dealId: c.dealId, commitmentId: id, type: "approval_set", payload: { approval, note, patch } });
         },
 
         recordWalkBack(id, note) {
