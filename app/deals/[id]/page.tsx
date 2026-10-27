@@ -5,8 +5,9 @@ import { useStore } from "@/lib/store";
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { canMove, stageIndex, STAGES } from "@/lib/gates";
+import { attribute, ATTRIBUTION_REASON } from "@/lib/attribution";
 import catalogData from "@/data/catalog.json";
-import type { CommitmentType, Stage, CatalogItem, Commitment } from "@/lib/types";
+import type { CommitmentType, Stage, CatalogItem, Commitment, DeliveryStatus, Evidence } from "@/lib/types";
 import type { ExtractionResult, CandidateCommitment } from "@/lib/llm/extract";
 
 const STAGE_LABELS: Record<Stage, string> = {
@@ -35,8 +36,12 @@ export default function DealPage() {
   const addOffRecord = useStore((s) => s.addOffRecord);
   const setOwner = useStore((s) => s.setOwner);
   const setCustomerAcknowledged = useStore((s) => s.setCustomerAcknowledged);
+  const setDelivery = useStore((s) => s.setDelivery);
+  const addEvidence = useStore((s) => s.addEvidence);
+  const csmVerify = useStore((s) => s.csmVerify);
+  const recordBreak = useStore((s) => s.recordBreak);
 
-  const [activeTab, setActiveTab] = useState<"capture" | "commitments" | "stage" | "handoff">("capture");
+  const [activeTab, setActiveTab] = useState<"capture" | "commitments" | "stage" | "handoff" | "delivery">("capture");
   const [activeTranscript, setActiveTranscript] = useState(0);
   const [selectedLineId, setSelectedLineId] = useState<string | null>(null);
   const [extracting, setExtracting] = useState(false);
@@ -69,6 +74,22 @@ export default function DealPage() {
     ownerName: string;
   } | null>(null);
 
+  // Delivery Modals state
+  const [keptModal, setKeptModal] = useState<{
+    id: string;
+    text: string;
+    kind: "task_link" | "customer_ack";
+    reference: string;
+  } | null>(null);
+
+  const [breakModal, setBreakModal] = useState<{
+    id: string;
+    text: string;
+    hasDependency: boolean;
+    dependencyText?: string;
+    cause: "vendor" | "customer_dependency";
+  } | null>(null);
+
   // Off-record form state
   const [offRecordForm, setOffRecordForm] = useState<{
     text: string;
@@ -99,6 +120,8 @@ export default function DealPage() {
 
   const isAE = role === "ae";
   const isImpl = role === "implementation";
+  const isCSM = role === "csm";
+  const isImplOrCSM = role === "implementation" || role === "csm";
 
   const handleSelectLine = (lineId: string) => {
     setSelectedLineId(lineId);
@@ -168,7 +191,7 @@ export default function DealPage() {
 
       {/* Tabs */}
       <div className="deal-tabs">
-        {(["capture", "commitments", "stage", "handoff"] as const).map((tab) => (
+        {(["capture", "commitments", "stage", "handoff", "delivery"] as const).map((tab) => (
           <button
             key={tab}
             className={`deal-tab ${activeTab === tab ? "deal-tab-active" : ""}`}
@@ -180,7 +203,9 @@ export default function DealPage() {
               ? `Commitments (${commitments.length})`
               : tab === "stage"
               ? `Stage (${STAGE_LABELS[deal.stage]})`
-              : `Handoff ${!isHandoffEnabled ? "🔒" : ""}`}
+              : tab === "handoff"
+              ? `Handoff ${!isHandoffEnabled ? "🔒" : ""}`
+              : `Delivery (${confirmedCommitments.length})`}
           </button>
         ))}
       </div>
@@ -1251,6 +1276,283 @@ export default function DealPage() {
         </div>
       )}
 
+      {/* Tab 5: Delivery */}
+      {activeTab === "delivery" && (
+        <div>
+          <div style={{ marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
+            <div>
+              <div style={{ fontSize: 18, fontWeight: 600 }}>Delivery &amp; Execution Tracking</div>
+              <div style={{ fontSize: 13, color: "var(--text-muted)", marginTop: 4 }}>
+                Track confirmed promises through implementation. Kept status requires verifiable evidence. Breaks are attributed to sales, delivery, or customer.
+              </div>
+            </div>
+
+            {/* Quick stats */}
+            <div style={{ display: "flex", gap: 12 }}>
+              <div className="card" style={{ padding: "8px 16px", textAlign: "center" }}>
+                <div style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase" }}>Confirmed</div>
+                <div style={{ fontSize: 18, fontWeight: 700 }}>{confirmedCommitments.length}</div>
+              </div>
+              <div className="card" style={{ padding: "8px 16px", textAlign: "center", borderLeft: "3px solid var(--green)" }}>
+                <div style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase" }}>Kept</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: "var(--green)" }}>
+                  {confirmedCommitments.filter((c) => c.delivery === "kept").length}
+                </div>
+              </div>
+              <div className="card" style={{ padding: "8px 16px", textAlign: "center", borderLeft: "3px solid var(--red)" }}>
+                <div style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase" }}>Broken</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: "var(--red)" }}>
+                  {confirmedCommitments.filter((c) => c.delivery === "broken").length}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {confirmedCommitments.length === 0 ? (
+            <div className="card" style={{ padding: 40, textAlign: "center", color: "var(--text-muted)" }}>
+              No confirmed commitments on this deal yet. Confirm commitments in the Commitments tab to track delivery.
+            </div>
+          ) : (
+            <div className="delivery-table-container">
+              <table className="delivery-table">
+                <thead>
+                  <tr>
+                    <th style={{ minWidth: 240 }}>Commitment</th>
+                    <th style={{ minWidth: 130 }}>Owner</th>
+                    <th style={{ minWidth: 100 }}>Due Date</th>
+                    <th style={{ minWidth: 160 }}>Customer Dependency</th>
+                    <th style={{ minWidth: 100 }}>Status</th>
+                    <th style={{ minWidth: 160 }}>Evidence</th>
+                    <th style={{ minWidth: 110 }}>CSM Verified</th>
+                    <th style={{ minWidth: 180 }}>Attribution</th>
+                    <th style={{ minWidth: 170 }}>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {confirmedCommitments.map((c) => {
+                    const attr = attribute(c);
+                    return (
+                      <tr key={c.id}>
+                        {/* Commitment */}
+                        <td>
+                          <div style={{ fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>
+                            {c.text}
+                          </div>
+                          {c.quote && (
+                            <div style={{ fontSize: 11, color: "var(--text-subtle)", fontStyle: "italic", marginBottom: 6 }}>
+                              &ldquo;{c.quote}&rdquo;
+                            </div>
+                          )}
+                          <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+                            <span className="badge badge-gray">{c.type}</span>
+                            {c.flag !== "green" && (
+                              <span className={`badge badge-${c.flag}`}>{c.flag}</span>
+                            )}
+                            {c.origin === "off_record" && (
+                              <span className="badge badge-amber">off-record</span>
+                            )}
+                            {c.late && (
+                              <span className="badge badge-amber">late</span>
+                            )}
+                          </div>
+                        </td>
+
+                        {/* Owner */}
+                        <td>
+                          {c.ownerName ? (
+                            <div>
+                              <div style={{ fontWeight: 500, fontSize: 13 }}>{c.ownerName}</div>
+                              <div style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "capitalize" }}>
+                                {c.ownerRole}
+                              </div>
+                            </div>
+                          ) : (
+                            <button
+                              className="btn btn-sm btn-secondary"
+                              disabled={!isImpl}
+                              title={!isImpl ? "Switch to Implementation Lead to assign owner" : ""}
+                              onClick={() => setOwnerModal({ id: c.id, ownerRole: "implementation", ownerName: "" })}
+                            >
+                              + Assign
+                            </button>
+                          )}
+                        </td>
+
+                        {/* Due Date */}
+                        <td>
+                          {c.dueDate ? (
+                            <div style={{ fontFamily: "monospace", fontSize: 12 }}>{c.dueDate}</div>
+                          ) : c.dueDays ? (
+                            <div style={{ fontSize: 12, color: "var(--text-muted)" }}>{c.dueDays}d post-close</div>
+                          ) : (
+                            <div style={{ fontSize: 12, color: "var(--text-subtle)" }}>TBD</div>
+                          )}
+                        </td>
+
+                        {/* Customer Dependency */}
+                        <td>
+                          {c.customerDependency ? (
+                            <div>
+                              <span className="badge badge-purple" style={{ marginBottom: 4, display: "inline-block" }}>
+                                Dependency
+                              </span>
+                              <div style={{ fontSize: 12, color: "var(--text)" }}>
+                                {c.customerDependency.text}
+                              </div>
+                              {c.customerDependency.quote && (
+                                <div style={{ fontSize: 10, color: "var(--text-subtle)", fontStyle: "italic", marginTop: 2 }}>
+                                  &ldquo;{c.customerDependency.quote}&rdquo;
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <span style={{ fontSize: 12, color: "var(--text-subtle)" }}>None recorded</span>
+                          )}
+                        </td>
+
+                        {/* Status */}
+                        <td>
+                          <span className={`delivery-status-chip delivery-${c.delivery}`}>
+                            {c.delivery === "kept"
+                              ? "✓ Kept"
+                              : c.delivery === "broken"
+                              ? "✕ Broken"
+                              : c.delivery.replace("_", " ")}
+                          </span>
+
+                          {c.delivery !== "kept" && c.delivery !== "broken" && isImplOrCSM && (
+                            <div style={{ marginTop: 6 }}>
+                              <select
+                                className="input-field"
+                                style={{ padding: "2px 6px", fontSize: 11, width: "auto" }}
+                                value={c.delivery}
+                                onChange={(e) => setDelivery(c.id, e.target.value as DeliveryStatus)}
+                              >
+                                <option value="open">open</option>
+                                <option value="on_track">on track</option>
+                                <option value="at_risk">at risk</option>
+                              </select>
+                            </div>
+                          )}
+                        </td>
+
+                        {/* Evidence */}
+                        <td>
+                          {c.evidence ? (
+                            <div>
+                              {c.evidence.kind === "task_link" ? (
+                                <a
+                                  href={c.evidence.reference}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ color: "var(--accent)", fontSize: 12, wordBreak: "break-all" }}
+                                >
+                                  🔗 {c.evidence.reference}
+                                </a>
+                              ) : (
+                                <div style={{ fontSize: 12, color: "var(--text)" }}>
+                                  💬 {c.evidence.reference}
+                                </div>
+                              )}
+                              <div style={{ fontSize: 10, color: "var(--text-subtle)", marginTop: 2 }}>
+                                {c.evidence.kind === "task_link" ? "Jira/Task Link" : "Customer Ack"}
+                              </div>
+                            </div>
+                          ) : (
+                            <span style={{ fontSize: 12, color: "var(--text-subtle)" }}>None provided</span>
+                          )}
+                        </td>
+
+                        {/* CSM Verified */}
+                        <td>
+                          {c.csmVerified ? (
+                            <span className="badge badge-green">✓ Verified</span>
+                          ) : c.delivery === "kept" ? (
+                            <button
+                              className="btn btn-sm btn-secondary"
+                              disabled={!isCSM}
+                              title={!isCSM ? "Switch to CSM to do this" : ""}
+                              onClick={() => csmVerify(c.id)}
+                            >
+                              Verify
+                            </button>
+                          ) : (
+                            <span style={{ fontSize: 12, color: "var(--text-subtle)" }}>—</span>
+                          )}
+                        </td>
+
+                        {/* Attribution */}
+                        <td>
+                          {c.delivery === "broken" && attr ? (
+                            <div>
+                              <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
+                                <span
+                                  className={`badge chip-${attr}`}
+                                  style={{ cursor: "help" }}
+                                  title={ATTRIBUTION_REASON[attr]}
+                                >
+                                  {attr.toUpperCase()} BREAK
+                                </span>
+                              </div>
+                              <div style={{ fontSize: 11, color: "var(--text-muted)", lineHeight: 1.4 }}>
+                                {ATTRIBUTION_REASON[attr]}
+                              </div>
+                            </div>
+                          ) : (
+                            <span style={{ fontSize: 12, color: "var(--text-subtle)" }}>—</span>
+                          )}
+                        </td>
+
+                        {/* Actions */}
+                        <td>
+                          {c.delivery !== "kept" && c.delivery !== "broken" ? (
+                            <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                              <button
+                                className="btn btn-sm btn-primary"
+                                disabled={!isImplOrCSM}
+                                title={!isImplOrCSM ? "Switch to Implementation Lead or CSM to do this" : ""}
+                                onClick={() =>
+                                  setKeptModal({
+                                    id: c.id,
+                                    text: c.text,
+                                    kind: "task_link",
+                                    reference: "",
+                                  })
+                                }
+                              >
+                                Mark Kept
+                              </button>
+                              <button
+                                className="btn btn-sm btn-danger"
+                                disabled={!isImplOrCSM}
+                                title={!isImplOrCSM ? "Switch to Implementation Lead or CSM to do this" : ""}
+                                onClick={() =>
+                                  setBreakModal({
+                                    id: c.id,
+                                    text: c.text,
+                                    hasDependency: c.customerDependency !== null,
+                                    dependencyText: c.customerDependency?.text,
+                                    cause: "vendor",
+                                  })
+                                }
+                              >
+                                Record Break
+                              </button>
+                            </div>
+                          ) : (
+                            <span style={{ fontSize: 12, color: "var(--text-subtle)" }}>Resolved</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Edit Commitment Modal */}
       {editModal && (
         <div className="modal-backdrop" onClick={() => setEditModal(null)}>
@@ -1448,6 +1750,186 @@ export default function DealPage() {
                 }}
               >
                 Save Owner
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mark Kept with Evidence Modal */}
+      {keptModal && (
+        <div className="modal-backdrop" onClick={() => setKeptModal(null)}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>
+              Mark Commitment as Kept
+            </div>
+            <div style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 14 }}>
+              Evidence is strictly mandatory before a commitment can be marked kept.
+            </div>
+
+            <div style={{ background: "var(--bg-surface)", padding: 12, borderRadius: "var(--radius)", marginBottom: 14, fontSize: 13, borderLeft: "3px solid var(--green)" }}>
+              {keptModal.text}
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div>
+                <label style={{ fontSize: 12, color: "var(--text-muted)" }}>Evidence Type</label>
+                <select
+                  className="input-field"
+                  value={keptModal.kind}
+                  onChange={(e) =>
+                    setKeptModal({
+                      ...keptModal,
+                      kind: e.target.value as "task_link" | "customer_ack",
+                    })
+                  }
+                >
+                  <option value="task_link">Task / Jira / Pull Request Link</option>
+                  <option value="customer_ack">Customer Written Sign-off / Email Note</option>
+                </select>
+              </div>
+
+              <div>
+                <label style={{ fontSize: 12, color: "var(--text-muted)" }}>
+                  {keptModal.kind === "task_link" ? "Task or PR URL (required)" : "Customer Sign-Off Note (required)"}
+                </label>
+                <input
+                  className="input-field"
+                  placeholder={
+                    keptModal.kind === "task_link"
+                      ? "https://tasks.brightpath.internal/TASK-104"
+                      : "Customer signed off in email confirmation 2026-05-14"
+                  }
+                  value={keptModal.reference}
+                  onChange={(e) => setKeptModal({ ...keptModal, reference: e.target.value })}
+                />
+              </div>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "flex-end", gap: 8, marginTop: 20 }}>
+              <button className="btn btn-secondary" onClick={() => setKeptModal(null)}>
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary"
+                disabled={keptModal.reference.trim().length === 0}
+                onClick={() => {
+                  addEvidence(keptModal.id, {
+                    kind: keptModal.kind,
+                    reference: keptModal.reference.trim(),
+                    addedAt: new Date().toISOString(),
+                  });
+                  setDelivery(keptModal.id, "kept");
+                  setKeptModal(null);
+                }}
+              >
+                Confirm Kept with Evidence
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Record Break Modal */}
+      {breakModal && (
+        <div className="modal-backdrop" onClick={() => setBreakModal(null)}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: "var(--red)" }}>
+              Record Broken Commitment
+            </div>
+            <div style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 14 }}>
+              Select the primary root cause for this broken commitment. Customer dependency can only be selected if a dependency was formally recorded.
+            </div>
+
+            <div style={{ background: "var(--bg-surface)", padding: 12, borderRadius: "var(--radius)", marginBottom: 16, fontSize: 13, borderLeft: "3px solid var(--red)" }}>
+              {breakModal.text}
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 10,
+                  padding: 12,
+                  borderRadius: "var(--radius)",
+                  border: "1px solid var(--border)",
+                  cursor: "pointer",
+                  background: breakModal.cause === "vendor" ? "var(--bg-hover)" : "transparent",
+                }}
+              >
+                <input
+                  type="radio"
+                  name="breakCause"
+                  checked={breakModal.cause === "vendor"}
+                  onChange={() => setBreakModal({ ...breakModal, cause: "vendor" })}
+                  style={{ marginTop: 3 }}
+                />
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 13 }}>Vendor-side cause</div>
+                  <div style={{ fontSize: 12, color: "var(--text-muted)" }}>
+                    Internal delay, engineering constraints, or resourcing issue.
+                  </div>
+                </div>
+              </label>
+
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 10,
+                  padding: 12,
+                  borderRadius: "var(--radius)",
+                  border: "1px solid var(--border)",
+                  cursor: breakModal.hasDependency ? "pointer" : "not-allowed",
+                  opacity: breakModal.hasDependency ? 1 : 0.5,
+                  background: breakModal.cause === "customer_dependency" ? "var(--bg-hover)" : "transparent",
+                }}
+                title={!breakModal.hasDependency ? "No customer dependency was recorded" : ""}
+              >
+                <input
+                  type="radio"
+                  name="breakCause"
+                  disabled={!breakModal.hasDependency}
+                  checked={breakModal.cause === "customer_dependency"}
+                  onChange={() => {
+                    if (breakModal.hasDependency) {
+                      setBreakModal({ ...breakModal, cause: "customer_dependency" });
+                    }
+                  }}
+                  style={{ marginTop: 3 }}
+                />
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 13 }}>Customer dependency missed</div>
+                  <div style={{ fontSize: 12, color: "var(--text-muted)" }}>
+                    The customer failed to deliver on their recorded dependency.
+                  </div>
+                  {!breakModal.hasDependency && (
+                    <div style={{ fontSize: 11, color: "var(--amber)", marginTop: 4, fontWeight: 500 }}>
+                      ⚠️ No customer dependency was recorded for this commitment.
+                    </div>
+                  )}
+                  {breakModal.hasDependency && breakModal.dependencyText && (
+                    <div style={{ fontSize: 11, color: "var(--accent)", marginTop: 4 }}>
+                      Recorded dependency: &ldquo;{breakModal.dependencyText}&rdquo;
+                    </div>
+                  )}
+                </div>
+              </label>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "flex-end", gap: 8, marginTop: 20 }}>
+              <button className="btn btn-secondary" onClick={() => setBreakModal(null)}>
+                Cancel
+              </button>
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  recordBreak(breakModal.id, breakModal.cause);
+                  setBreakModal(null);
+                }}
+              >
+                Confirm Break
               </button>
             </div>
           </div>
