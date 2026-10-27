@@ -2,13 +2,21 @@
 
 import { useParams } from "next/navigation";
 import { useStore } from "@/lib/store";
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import Link from "next/link";
 import { canMove, stageIndex, STAGES } from "@/lib/gates";
 import { attribute, ATTRIBUTION_REASON } from "@/lib/attribution";
 import catalogData from "@/data/catalog.json";
-import type { CommitmentType, Stage, CatalogItem, Commitment, DeliveryStatus, Evidence } from "@/lib/types";
-import type { ExtractionResult, CandidateCommitment } from "@/lib/llm/extract";
+import type {
+  CommitmentType,
+  Stage,
+  CatalogItem,
+  Commitment,
+  DeliveryStatus,
+  Evidence,
+  ExtractionResult,
+  CandidateCommitment,
+} from "@/lib/types";
 
 const STAGE_LABELS: Record<Stage, string> = {
   discovery: "Discovery",
@@ -21,9 +29,13 @@ const STAGE_LABELS: Record<Stage, string> = {
 
 export default function DealPage() {
   const { id } = useParams<{ id: string }>();
-  const deal = useStore((s) => s.deals.find((d) => d.id === id));
-  const transcripts = useStore((s) => s.transcripts.filter((t) => t.dealId === id));
-  const commitments = useStore((s) => s.commitments.filter((c) => c.dealId === id));
+  const allDeals = useStore((s) => s.deals);
+  const allTranscripts = useStore((s) => s.transcripts);
+  const allCommitments = useStore((s) => s.commitments);
+
+  const deal = useMemo(() => allDeals.find((d) => d.id === id), [allDeals, id]);
+  const transcripts = useMemo(() => allTranscripts.filter((t) => t.dealId === id), [allTranscripts, id]);
+  const commitments = useMemo(() => allCommitments.filter((c) => c.dealId === id), [allCommitments, id]);
   const lastExtractions = useStore((s) => s.lastExtraction);
   const role = useStore((s) => s.role);
 

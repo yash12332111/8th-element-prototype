@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useStore } from "@/lib/store";
 import { calculateAccountKeptRate } from "@/lib/metrics";
 import { attribute, ATTRIBUTION_REASON } from "@/lib/attribution";
@@ -21,7 +21,8 @@ export default function AccountDetailPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id;
 
-  const deal = useStore((s) => s.deals.find((d) => d.id === id || d.accountId === id));
+  const deals = useStore((s) => s.deals);
+  const deal = useMemo(() => deals.find((d) => d.id === id || d.accountId === id), [deals, id]);
   const commitments = useStore((s) => s.commitments);
   const [filterBrokenOnly, setFilterBrokenOnly] = useState(false);
 

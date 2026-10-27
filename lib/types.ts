@@ -133,3 +133,42 @@ export interface AppEvent {
     | "evidence_added" | "csm_verified" | "break_recorded" | "customer_acknowledged" | "reset";
   payload: Record<string, unknown>;
 }
+
+export interface CandidateCommitment {
+  lineId: string;
+  quote: string;
+  text: string;
+  type: CommitmentType;
+  catalogItemId: string | null;
+  dueText: string | null;
+  dueDays: number | null;
+  confidence: number | null;
+  speakerId: string;
+  timestamp: string;
+  flag: Flag;
+  flagReason: string;
+  customerDependency: CustomerDependency | null;
+  status: "committed" | "discussed";
+}
+
+export interface CandidateDependency {
+  lineId: string;
+  quote: string;
+  text: string;
+  dueDays: number | null;
+  speakerId: string;
+  timestamp: string;
+  relatedCommitmentIndex: number | null;
+}
+
+export interface ExtractionResult {
+  promptVersion: string;
+  model: string;
+  strict: boolean;
+  latencyMs: number;
+  candidates: CandidateCommitment[];
+  discussed: CandidateCommitment[];
+  dependencies: CandidateDependency[];
+  dropped: { quote: string; reason: string }[];
+  rawCount: number;
+}

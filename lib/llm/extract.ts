@@ -1,49 +1,21 @@
 import { z } from "zod";
 import { groundQuote } from "../grounding";
 import { checkCommitment } from "../rules";
-import type { CatalogItem, CommitmentType, CustomerDependency, Flag, Transcript } from "../types";
+import type {
+  CatalogItem,
+  CommitmentType,
+  CustomerDependency,
+  Flag,
+  Transcript,
+  CandidateCommitment,
+  CandidateDependency,
+  ExtractionResult,
+} from "../types";
 import { buildSchema, buildUserMessage, PROMPT_VERSION, SYSTEM_PROMPT } from "./prompt";
 import { callGroqJSON } from "./groq";
 import catalogData from "../../data/catalog.json";
 
-export interface CandidateCommitment {
-  lineId: string;
-  quote: string;
-  text: string;
-  type: CommitmentType;
-  catalogItemId: string | null;
-  dueText: string | null;
-  dueDays: number | null;
-  confidence: number | null;
-  speakerId: string;
-  timestamp: string;
-  flag: Flag;
-  flagReason: string;
-  customerDependency: CustomerDependency | null;
-  status: "committed" | "discussed";
-}
-
-export interface CandidateDependency {
-  lineId: string;
-  quote: string;
-  text: string;
-  dueDays: number | null;
-  speakerId: string;
-  timestamp: string;
-  relatedCommitmentIndex: number | null;
-}
-
-export interface ExtractionResult {
-  promptVersion: string;
-  model: string;
-  strict: boolean;
-  latencyMs: number;
-  candidates: CandidateCommitment[];
-  discussed: CandidateCommitment[];
-  dependencies: CandidateDependency[];
-  dropped: { quote: string; reason: string }[];
-  rawCount: number;
-}
+export type { CandidateCommitment, CandidateDependency, ExtractionResult };
 
 // Zod schema accepting standard nulls or sentinels ("" / -1)
 const RawCommitmentSchema = z.object({
