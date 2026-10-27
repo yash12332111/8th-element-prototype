@@ -17,6 +17,13 @@ export function isFlagResolved(c: Commitment): boolean {
 export interface GateResult { allowed: boolean; blockers: { commitmentId: string; reason: string }[] }
 
 export function checkContractGate(cs: Commitment[]): GateResult {
+  // Gate cannot be satisfied with zero commitments – extraction must run first.
+  if (cs.length === 0) {
+    return {
+      allowed: false,
+      blockers: [{ commitmentId: "", reason: "No commitments found. Run AI extraction on at least one transcript before advancing to Contract." }],
+    };
+  }
   const blockers = cs.filter(c => isActive(c) && !isFlagResolved(c))
     .map(c => ({ commitmentId: c.id, reason: `Unresolved ${c.flag} flag: ${c.flagReason}` }));
   return { allowed: blockers.length === 0, blockers };

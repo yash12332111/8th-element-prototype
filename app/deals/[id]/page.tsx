@@ -823,8 +823,14 @@ export default function DealPage() {
                 <button
                   className={`btn ${gateCheck.allowed ? "btn-primary" : "btn-danger"}`}
                   style={{ fontSize: 14, padding: "8px 18px" }}
-                  disabled={!isAE}
-                  title={!isAE ? "Switch to AE role in header to move deal stage" : undefined}
+                  disabled={!isAE || !gateCheck.allowed}
+                  title={
+                    !isAE
+                      ? "Switch to AE role in header to move deal stage"
+                      : !gateCheck.allowed
+                      ? "Resolve all gate blockers before advancing"
+                      : undefined
+                  }
                   onClick={() => moveStage(deal.id, nextStage)}
                 >
                   Move to {STAGE_LABELS[nextStage]} →

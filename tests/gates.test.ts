@@ -125,6 +125,17 @@ describe("Gate checks (lib/gates.ts)", () => {
     expect(res.blockers.length).toBe(0);
   });
 
+  it("blocks contract gate when there are zero commitments (extraction not yet run)", () => {
+    // Root-cause guard: advancing to Contract before any extraction ran is
+    // the mechanism that let Harbor reach Contract with unresolved flags.
+    // With 0 commitments the gate must be blocked so the AE is forced to
+    // extract from at least one transcript first.
+    const res = checkContractGate([]);
+    expect(res.allowed).toBe(false);
+    expect(res.blockers.length).toBe(1);
+    expect(res.blockers[0].reason).toContain("No commitments found");
+  });
+
   it("blocks Closed-Won gate if any active item is still in proposed review status", () => {
     const proposedItem = createMockCommitment({
       review: "proposed",

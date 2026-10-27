@@ -208,7 +208,7 @@ export default function EvalPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 16 }}>
           <div>
             <div style={{ fontWeight: 600, fontSize: 13, color: "var(--text)", marginBottom: 4 }}>
-              1. Matching Rule (Section 3.8)
+              1. Matching Rule
             </div>
             <div style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.5 }}>
               A predicted commitment matches a gold commitment if both hold: (a) it is the same transcript and identical line after grounding (<code>line_id</code>), and (b) word-set Jaccard similarity of normalized quotes is ≥ 0.5. Matching is greedy and strictly one-to-one.
@@ -217,7 +217,7 @@ export default function EvalPage() {
 
           <div>
             <div style={{ fontWeight: 600, fontSize: 13, color: "var(--text)", marginBottom: 4 }}>
-              2. Dataset Split (Section 5.4)
+              2. Dataset Split
             </div>
             <div style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.5 }}>
               The dataset contains 20 synthetic transcripts covering varied field-service industries. <strong>dev</strong> (<code>e01</code>–<code>e05</code>) was used for initial tuning; <strong>test</strong> (<code>e06</code>–<code>e20</code>, 15 transcripts) is held-out and was never tuned on.
