@@ -42,6 +42,7 @@ export interface AppState {
 
   setOwner(id: string, ownerRole: "implementation" | "csm" | "product", ownerName: string): void;
   setDependency(id: string, dep: CustomerDependency): void;
+  setCustomerAcknowledged(id: string, acknowledged: boolean): void;
 
   setDelivery(id: string, status: DeliveryStatus): void;
   addEvidence(id: string, evidence: Evidence): void;
@@ -407,6 +408,19 @@ export const useStore = create<AppState>()(
             ),
           }));
           emit({ role, dealId: c.dealId, commitmentId: id, type: "dependency_set", payload: { dep } });
+        },
+
+        setCustomerAcknowledged(id, acknowledged) {
+          const { role } = get();
+          if (!canImpl(role)) return;
+          const c = get().commitments.find((x) => x.id === id);
+          if (!c) return;
+          set((s) => ({
+            commitments: s.commitments.map((x) =>
+              x.id === id ? { ...x, customerAcknowledged: acknowledged } : x
+            ),
+          }));
+          emit({ role, dealId: c.dealId, commitmentId: id, type: "customer_acknowledged", payload: { acknowledged } });
         },
 
         // ── Delivery (implementation or CSM) ─────────────────────
