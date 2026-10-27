@@ -134,6 +134,7 @@ export const useStore = create<AppState>()(
             lineId: string; quote: string; text: string; type: CommitmentType;
             catalogItemId: string | null; dueText: string | null; dueDays: number | null;
             confidence: number | null; speakerId: string; timestamp: string;
+            customerDependency?: CustomerDependency | null;
           }>) {
             const key = `${transcriptId}|${candidate.lineId}|${candidate.quote.slice(0, 60)}`;
             if (existingKeys.has(key)) continue;
@@ -177,7 +178,7 @@ export const useStore = create<AppState>()(
               ownerRole: null,
               ownerName: null,
               dueDate: null,
-              customerDependency: null,
+              customerDependency: candidate.customerDependency ?? null,
               delivery: "open",
               evidence: null,
               keptAt: null,

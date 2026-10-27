@@ -29,8 +29,8 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Groq Integration & Structured Outputs Smoke Test
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Primary Model**: `openai/gpt-oss-120b`
+- **Fallback Model**: `openai/gpt-oss-20b`
+- **Structured Outputs Result**: Schema smoke test passed cleanly in **strict mode** (`strict: true`) with JSON Schema nullable types (`type: ["string", "null"]` and `type: ["integer", "null"]`). The model obeyed the schema constraints 100%, grounding, speaker identification, and returned candidate commitments and customer dependencies without errors.
