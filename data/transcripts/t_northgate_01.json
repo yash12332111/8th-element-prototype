@@ -1,0 +1,27 @@
+{
+  "id": "t_northgate_01",
+  "dealId": "d_northgate",
+  "title": "Discovery and proposal call",
+  "date": "2026-03-10",
+  "source": "call",
+  "speakers": [
+    { "id": "s1", "name": "Priya Raman", "role": "Account Executive", "company": "Brightpath", "side": "vendor" },
+    { "id": "s2", "name": "Sam Delgado", "role": "Implementation Lead", "company": "Brightpath", "side": "vendor" },
+    { "id": "s3", "name": "Rosa Chen", "role": "VP of Operations", "company": "Northgate Retail", "side": "customer" },
+    { "id": "s4", "name": "Iain Wallace", "role": "IT Director", "company": "Northgate Retail", "side": "customer" }
+  ],
+  "lines": [
+    { "id": "L1",  "ts": "00:00:12", "speakerId": "s1", "text": "Thanks for making time, Rosa. We're excited to show you what Brightpath can do for Northgate." },
+    { "id": "L2",  "ts": "00:01:00", "speakerId": "s3", "text": "We need SSO on day one. Our security policy is non-negotiable on this." },
+    { "id": "L3",  "ts": "00:01:30", "speakerId": "s1", "text": "SAML single sign-on will be live within two weeks of signing, that's standard for us." },
+    { "id": "L4",  "ts": "00:02:10", "speakerId": "s4", "text": "We'll also need our job history migrated. It's in CSVs right now." },
+    { "id": "L5",  "ts": "00:02:40", "speakerId": "s2", "text": "We can handle the CSV migration within thirty days of signature." },
+    { "id": "L6",  "ts": "00:03:20", "speakerId": "s4", "text": "We'll have the job history export ready for you by the first of next month." },
+    { "id": "L7",  "ts": "00:03:55", "speakerId": "s3", "text": "What's the go-live timeline if we sign by end of March?" },
+    { "id": "L8",  "ts": "00:04:20", "speakerId": "s1", "text": "Sign by March 31st and we target go-live by May 15th, standard forty-five day track." },
+    { "id": "L9",  "ts": "00:05:00", "speakerId": "s3", "text": "We'd also want a dedicated open item tracker for ongoing commitments." },
+    { "id": "L10", "ts": "00:05:30", "speakerId": "s2", "text": "We'll set that up as part of onboarding, that's on us." },
+    { "id": "L11", "ts": "00:06:00", "speakerId": "s3", "text": "Good. Anything else we need to align on today?" },
+    { "id": "L12", "ts": "00:06:25", "speakerId": "s1", "text": "I think we've covered the key items. I'll send over the formal proposal this afternoon." }
+  ]
+}

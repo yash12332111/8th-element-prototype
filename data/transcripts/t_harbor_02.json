@@ -1,0 +1,41 @@
+{
+  "id": "t_harbor_02",
+  "dealId": "d_harbor",
+  "title": "Technical deep-dive",
+  "date": "2026-09-18",
+  "source": "call",
+  "speakers": [
+    { "id": "s1", "name": "Priya Raman", "role": "Account Executive", "company": "Brightpath", "side": "vendor" },
+    { "id": "s2", "name": "Elena Vasquez", "role": "Sales Engineer", "company": "Brightpath", "side": "vendor" },
+    { "id": "s5", "name": "Tom Brightwell", "role": "Chief Executive Officer", "company": "Brightpath", "side": "vendor" },
+    { "id": "s3", "name": "Dan Ortiz", "role": "Operations Director", "company": "Harbor Logistics", "side": "customer" },
+    { "id": "s4", "name": "Kim Park", "role": "IT Manager", "company": "Harbor Logistics", "side": "customer" }
+  ],
+  "lines": [
+    { "id": "L1",  "ts": "00:00:10", "speakerId": "s5", "text": "Tom Brightwell here. I wanted to join this call personally because Harbor Logistics is exactly the kind of customer we built Brightpath for." },
+    { "id": "L2",  "ts": "00:00:50", "speakerId": "s3", "text": "Glad to have you, Tom. We've been impressed with the product but we need reassurance on a few commitments." },
+    { "id": "L3",  "ts": "00:01:20", "speakerId": "s5", "text": "I personally guarantee we will deliver the premium support package with four-hour response time from day one of go-live." },
+    { "id": "L4",  "ts": "00:02:10", "speakerId": "s4", "text": "What about admin training? Our team will need to be up to speed quickly." },
+    { "id": "L5",  "ts": "00:02:35", "speakerId": "s2", "text": "We will run two admin training sessions within the first week after go-live, standard for all customers." },
+    { "id": "L6",  "ts": "00:03:05", "speakerId": "s3", "text": "I'd like to know about CRM integration. We use Salesforce." },
+    { "id": "L7",  "ts": "00:03:30", "speakerId": "s2", "text": "CRM sync with Salesforce is standard and we will have it live within three weeks of signing." },
+    { "id": "L8",  "ts": "00:04:00", "speakerId": "s4", "text": "What about workflow automation? We have some complex approval chains." },
+    { "id": "L9",  "ts": "00:04:25", "speakerId": "s2", "text": "We will configure up to ten custom workflows as part of standard onboarding, covered in the two-week window." },
+    { "id": "L10", "ts": "00:05:00", "speakerId": "s3", "text": "And accounting? We need everything to sync with our QuickBooks." },
+    { "id": "L11", "ts": "00:05:25", "speakerId": "s2", "text": "Accounting sync with QuickBooks is standard and included, we will complete that within fourteen days of signing." },
+    { "id": "L12", "ts": "00:06:00", "speakerId": "s4", "text": "We want to make sure all our users can log in via our company SSO. We mentioned SAML last time." },
+    { "id": "L13", "ts": "00:06:25", "speakerId": "s2", "text": "Confirmed, SAML single sign-on will be live within two weeks of signing, we need your IdP metadata to start." },
+    { "id": "L14", "ts": "00:07:05", "speakerId": "s4", "text": "We'll send the IdP metadata and test credentials by end of this week." },
+    { "id": "L15", "ts": "00:07:30", "speakerId": "s3", "text": "Can you do a custom dashboard for our ops team?" },
+    { "id": "L16", "ts": "00:07:55", "speakerId": "s2", "text": "A fully custom dashboard is something I'd need to scope further, it's not in the standard package." },
+    { "id": "L17", "ts": "00:08:30", "speakerId": "s5", "text": "I can tell you that we're committed to making Harbor Logistics successful. If there are gaps, we'll find a way." },
+    { "id": "L18", "ts": "00:09:10", "speakerId": "s3", "text": "That's reassuring. What's the earliest we could go live if we sign next week?" },
+    { "id": "L19", "ts": "00:09:40", "speakerId": "s1", "text": "If you sign by September 25th, we can target a go-live of November 9th, that's forty-five days." },
+    { "id": "L20", "ts": "00:10:20", "speakerId": "s3", "text": "We'd also like to explore whether you offer payroll system integration down the line." },
+    { "id": "L21", "ts": "00:10:50", "speakerId": "s1", "text": "Payroll integration is on the roadmap for next year, nothing I can commit to today." },
+    { "id": "L22", "ts": "00:11:30", "speakerId": "s4", "text": "Alright. Kim, any final questions?" },
+    { "id": "L23", "ts": "00:11:50", "speakerId": "s4", "text": "No, I think we have what we need. We'll review internally and come back to you by Friday." },
+    { "id": "L24", "ts": "00:12:15", "speakerId": "s5", "text": "We look forward to it. We're excited about this partnership." },
+    { "id": "L25", "ts": "00:12:45", "speakerId": "s1", "text": "Thank you both. I'll send over the proposal summary after this call." }
+  ]
+}

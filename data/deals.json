@@ -1,0 +1,41 @@
+[
+  {
+    "id": "d_harbor",
+    "accountId": "a_harbor",
+    "accountName": "Harbor Logistics (fictional)",
+    "aeName": "Priya Raman",
+    "implementationLead": "Marcus Webb",
+    "csmName": "Aisha Okonkwo",
+    "arrUsd": 84000,
+    "stage": "proposal",
+    "closeDate": null,
+    "renewalDate": null,
+    "transcriptIds": ["t_harbor_01", "t_harbor_02"]
+  },
+  {
+    "id": "d_cedar",
+    "accountId": "a_cedar",
+    "accountName": "Cedar Health Clinics (fictional)",
+    "aeName": "Jordan Tse",
+    "implementationLead": "Marcus Webb",
+    "csmName": "Aisha Okonkwo",
+    "arrUsd": 120000,
+    "stage": "onboarding",
+    "closeDate": "2026-09-01",
+    "renewalDate": "2027-09-01",
+    "transcriptIds": ["t_cedar_01"]
+  },
+  {
+    "id": "d_northgate",
+    "accountId": "a_northgate",
+    "accountName": "Northgate Retail (fictional)",
+    "aeName": "Priya Raman",
+    "implementationLead": "Sam Delgado",
+    "csmName": "Aisha Okonkwo",
+    "arrUsd": 96000,
+    "stage": "renewal",
+    "closeDate": "2026-06-15",
+    "renewalDate": "2027-06-15",
+    "transcriptIds": ["t_northgate_01"]
+  }
+]

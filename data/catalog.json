@@ -1,0 +1,110 @@
+[
+  {
+    "id": "int_sso",
+    "type": "integration",
+    "name": "Single sign-on (SAML)",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 10,
+    "notes": "Requires customer IdP metadata and test environment access."
+  },
+  {
+    "id": "int_crm_sync",
+    "type": "integration",
+    "name": "CRM sync (standard connector)",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 21,
+    "notes": "Supports Salesforce and HubSpot; other CRMs on request."
+  },
+  {
+    "id": "int_accounting",
+    "type": "integration",
+    "name": "Accounting sync (standard connector)",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 14,
+    "notes": "QuickBooks and Xero supported out of the box."
+  },
+  {
+    "id": "int_custom_erp",
+    "type": "integration",
+    "name": "Custom ERP connector",
+    "offered": false,
+    "standard": false,
+    "leadTimeDays": null,
+    "notes": "Not on the roadmap; requires a custom SOW."
+  },
+  {
+    "id": "mig_csv",
+    "type": "data_migration",
+    "name": "Data migration from CSV templates",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 30,
+    "notes": "Customer must provide data using Brightpath CSV templates."
+  },
+  {
+    "id": "mig_legacy_db",
+    "type": "data_migration",
+    "name": "Migration from a legacy database",
+    "offered": true,
+    "standard": false,
+    "leadTimeDays": 60,
+    "notes": "Non-standard; requires implementation scoping and additional SOW."
+  },
+  {
+    "id": "cfg_workflows",
+    "type": "configuration",
+    "name": "Workflow configuration (up to 10)",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 14,
+    "notes": "Up to 10 custom workflow rules included in standard onboarding."
+  },
+  {
+    "id": "cfg_custom_reports",
+    "type": "configuration",
+    "name": "Custom report building",
+    "offered": true,
+    "standard": false,
+    "leadTimeDays": 21,
+    "notes": "Non-standard; scoped per engagement."
+  },
+  {
+    "id": "tl_golive_standard",
+    "type": "timeline",
+    "name": "Go-live, standard implementation",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 45,
+    "notes": "Standard 45-day implementation track assumes customer readiness."
+  },
+  {
+    "id": "trn_admin",
+    "type": "training",
+    "name": "Admin training (two sessions)",
+    "offered": true,
+    "standard": true,
+    "leadTimeDays": 7,
+    "notes": "Two 90-minute remote sessions included in all plans."
+  },
+  {
+    "id": "trn_onsite",
+    "type": "training",
+    "name": "On-site training",
+    "offered": true,
+    "standard": false,
+    "leadTimeDays": 30,
+    "notes": "Non-standard; travel and logistics must be agreed in advance."
+  },
+  {
+    "id": "sup_premium",
+    "type": "support",
+    "name": "Premium support (4-hour response)",
+    "offered": true,
+    "standard": false,
+    "leadTimeDays": null,
+    "notes": "Non-standard add-on; must be included in the order form."
+  }
+]

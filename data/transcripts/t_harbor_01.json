@@ -1,0 +1,40 @@
+{
+  "id": "t_harbor_01",
+  "dealId": "d_harbor",
+  "title": "Discovery call 1",
+  "date": "2026-09-10",
+  "source": "call",
+  "speakers": [
+    { "id": "s1", "name": "Priya Raman", "role": "Account Executive", "company": "Brightpath", "side": "vendor" },
+    { "id": "s2", "name": "Elena Vasquez", "role": "Sales Engineer", "company": "Brightpath", "side": "vendor" },
+    { "id": "s3", "name": "Dan Ortiz", "role": "Operations Director", "company": "Harbor Logistics", "side": "customer" },
+    { "id": "s4", "name": "Kim Park", "role": "IT Manager", "company": "Harbor Logistics", "side": "customer" }
+  ],
+  "lines": [
+    { "id": "L1",  "ts": "00:00:05", "speakerId": "s1", "text": "Thanks for joining today, Dan. Let me start by walking you through how Brightpath handles integrations." },
+    { "id": "L2",  "ts": "00:00:42", "speakerId": "s3", "text": "We're mainly interested in whether you can connect to our legacy ERP system. That's non-negotiable for us." },
+    { "id": "L3",  "ts": "00:01:10", "speakerId": "s2", "text": "Absolutely, we will build a custom ERP connector specifically for Harbor Logistics, that's something we can commit to." },
+    { "id": "L4",  "ts": "00:02:05", "speakerId": "s4", "text": "What about single sign-on? Our security team requires SAML." },
+    { "id": "L5",  "ts": "00:02:30", "speakerId": "s1", "text": "Yes, we will have SSO live within two weeks of signing. That's a standard part of our onboarding." },
+    { "id": "L6",  "ts": "00:03:15", "speakerId": "s3", "text": "We also have about five years of job history we'd need migrated. It's sitting in CSV exports right now." },
+    { "id": "L7",  "ts": "00:03:50", "speakerId": "s1", "text": "We'll have the CSV migration done in three weeks from contract signature." },
+    { "id": "L8",  "ts": "00:04:30", "speakerId": "s4", "text": "What about the mobile app? Our field techs work offline a lot." },
+    { "id": "L9",  "ts": "00:04:55", "speakerId": "s2", "text": "Our app works on iOS and Android and handles standard offline caching today." },
+    { "id": "L10", "ts": "00:05:20", "speakerId": "s3", "text": "We'd need true offline mode, not just caching. Full job management offline." },
+    { "id": "L11", "ts": "00:05:45", "speakerId": "s1", "text": "I understand. The full offline mobile mode will be ready by Q1 of next year, I can commit to that." },
+    { "id": "L12", "ts": "00:06:30", "speakerId": "s4", "text": "That works for our timeline. Kim, do you have questions about the data migration process?" },
+    { "id": "L13", "ts": "00:07:00", "speakerId": "s4", "text": "Yes, we'll send the job history export by the 15th of next month so you have time to prepare." },
+    { "id": "L14", "ts": "00:07:40", "speakerId": "s2", "text": "Perfect. We'll need that to kick off the migration work on our side." },
+    { "id": "L15", "ts": "00:08:10", "speakerId": "s3", "text": "One more thing: we really need custom reporting. Can you do that?" },
+    { "id": "L16", "ts": "00:08:35", "speakerId": "s2", "text": "We could probably look at custom reports, let me check with the implementation team on what's feasible." },
+    { "id": "L17", "ts": "00:09:00", "speakerId": "s1", "text": "And if you can sign this month, we'll include a ten percent discount on the first year." },
+    { "id": "L18", "ts": "00:09:45", "speakerId": "s3", "text": "That's interesting. We'd also want on-site training for our field supervisors." },
+    { "id": "L19", "ts": "00:10:15", "speakerId": "s2", "text": "We can arrange on-site training for your supervisors, we'll include two days on-site as part of the package." },
+    { "id": "L20", "ts": "00:10:50", "speakerId": "s3", "text": "Good. What about legacy database migration? We have an old Oracle system too." },
+    { "id": "L21", "ts": "00:11:20", "speakerId": "s1", "text": "We will handle the legacy database migration as well, that's something we offer." },
+    { "id": "L22", "ts": "00:12:00", "speakerId": "s4", "text": "How long does a typical implementation take?" },
+    { "id": "L23", "ts": "00:12:30", "speakerId": "s2", "text": "Standard implementations run forty-five days from signature to go-live." },
+    { "id": "L24", "ts": "00:13:10", "speakerId": "s3", "text": "We'd need to be live before our Q1 busy season." },
+    { "id": "L25", "ts": "00:13:45", "speakerId": "s1", "text": "Noted. Let's schedule a follow-up to discuss the technical requirements in more detail." }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "t_cedar_01",
+  "dealId": "d_cedar",
+  "title": "Kickoff call",
+  "date": "2026-09-05",
+  "source": "call",
+  "speakers": [
+    { "id": "s1", "name": "Jordan Tse", "role": "Account Executive", "company": "Brightpath", "side": "vendor" },
+    { "id": "s2", "name": "Marcus Webb", "role": "Implementation Lead", "company": "Brightpath", "side": "vendor" },
+    { "id": "s3", "name": "Dr. Faye Morton", "role": "Chief Technology Officer", "company": "Cedar Health Clinics", "side": "customer" },
+    { "id": "s4", "name": "Luis Herrera", "role": "Operations Manager", "company": "Cedar Health Clinics", "side": "customer" }
+  ],
+  "lines": [
+    { "id": "L1",  "ts": "00:00:08", "speakerId": "s2", "text": "Welcome to the Cedar Health Clinics kickoff. Today we'll walk through the commitments and kick off implementation." },
+    { "id": "L2",  "ts": "00:01:00", "speakerId": "s3", "text": "We're glad to get started. Our top priority is getting SSO live so our staff don't have separate credentials." },
+    { "id": "L3",  "ts": "00:01:30", "speakerId": "s2", "text": "SSO is owned by me, target is fourteen days from today." },
+    { "id": "L4",  "ts": "00:02:10", "speakerId": "s4", "text": "The CSV migration is critical too. Our patient scheduling data needs to come over cleanly." },
+    { "id": "L5",  "ts": "00:02:40", "speakerId": "s2", "text": "Migration is on track, currently processing the CSV templates Cedar provided. We're targeting thirty days." },
+    { "id": "L6",  "ts": "00:03:20", "speakerId": "s3", "text": "Good. We also discussed admin training. Our IT lead is ready." },
+    { "id": "L7",  "ts": "00:03:50", "speakerId": "s2", "text": "Admin training is scheduled for the end of next week, two sessions as agreed." },
+    { "id": "L8",  "ts": "00:04:30", "speakerId": "s4", "text": "There was also a mention of a custom scheduling workflow for our after-hours calls." },
+    { "id": "L9",  "ts": "00:05:00", "speakerId": "s2", "text": "Workflow configuration is in scope, we're building that now and it's currently at risk due to a dependency on the patient data schema." },
+    { "id": "L10", "ts": "00:05:40", "speakerId": "s3", "text": "Anything we can provide to unblock that?" },
+    { "id": "L11", "ts": "00:06:00", "speakerId": "s2", "text": "Yes, we need the final patient data schema document from your IT team." },
+    { "id": "L12", "ts": "00:06:30", "speakerId": "s4", "text": "Also, on the kickoff readback: we were promised a dedicated customer success manager for the first six months." },
+    { "id": "L13", "ts": "00:07:05", "speakerId": "s1", "text": "That's correct, Aisha Okonkwo will be your dedicated CSM for the first six months post go-live." },
+    { "id": "L14", "ts": "00:07:45", "speakerId": "s3", "text": "Perfect. Any other items we should track?" },
+    { "id": "L15", "ts": "00:08:10", "speakerId": "s2", "text": "We're monitoring all items closely. I'll send a weekly status update every Monday." }
+  ]
+}
